@@ -78,4 +78,14 @@ public class Student {
         ", lopHoc='" + lopHoc + '\'' +
          ']';
   }
+
+  public void show(){
+    System.out.println( "CreateList.Student[ " +
+        "name='" + name + '\'' +
+        ", age=" + age +
+        ", address='" + address + '\'' +
+        ", point='" + point + '\'' +
+        ", lopHoc='" + lopHoc + '\'' +
+        ']');
+  }
 }

@@ -4,6 +4,7 @@ import CreateList.AddList;
 import CreateList.Student;
 import java.util.Comparator;
 import java.util.Objects;
+import java.util.function.Supplier;
 
 /**
  * @author thuandao1010
@@ -36,6 +37,11 @@ public class TestObjects {
     System.out.println(Objects.checkIndex(2,AddList.Student().size()));
     System.out.println(Objects.deepEquals(student3.getAge(), 25));
     System.out.println(Objects.requireNonNullElse(student2,student4));
+
+
+    Objects.requireNonNullElseGet(student2,  () -> student4.toString());
+
+
 
 
 
