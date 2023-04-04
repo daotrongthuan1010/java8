@@ -1,10 +1,9 @@
-package TestJava8;
+package FutureJava8;
 
 import CreateList.AddList;
 import CreateList.Student;
 import java.util.Comparator;
 import java.util.Objects;
-import java.util.function.Supplier;
 
 /**
  * @author thuandao1010
