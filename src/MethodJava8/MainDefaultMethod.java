@@ -1,14 +1,17 @@
-package TestJava8;
+package MethodJava8;
 
 /**
  * @author thuandao1010
  * @version 1.0
  * @since 2023-02-11
  */
-public class Stream {
+public class MainDefaultMethod {
 
   public static void main(String[] args) {
 
+  A a  = new A();
+  a.test();
+  DefaultMethod.method();
 
   }
 
