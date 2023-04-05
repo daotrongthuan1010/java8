@@ -27,6 +27,12 @@ public class TestStream {
     studentsByAge.forEach((age, students) -> {
       System.out.println("Age " + age + ": ");
       students.forEach(System.out::println);
+
+      System.out.println(AddList.Student().stream().count());
+
+      System.out.println(AddList.Student().stream().distinct());
+
+
     });
   }
 
