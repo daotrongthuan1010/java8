@@ -36,7 +36,7 @@ public class TestOptional {
 
     Optional<Student> optional = Optional.ofNullable(student1);
 
-    System.out.println(optional.filter(x -> x.getName().equals("Tran Viet Anh")).orElse(student4));
+//    System.out.println(optional.filter(x -> x.getName().equals("Tran Viet Anh")).orElse(student4));
 
 //    optional.ofNullable(student4);
 

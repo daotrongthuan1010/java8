@@ -13,6 +13,9 @@ public class MainDefaultMethod {
   a.test();
   DefaultMethod.method();
 
+  Integer b  = null;
+    System.out.println(b.intValue());
+
   }
 
 }
