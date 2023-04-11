@@ -23,9 +23,8 @@ public class MethodReference {
     List<String> list = Arrays.asList(a);
     Consumer<String> consumer = x -> System.out.println(x);
 
-//    list.stream().forEach(consumer);
-//
-//    list.stream().forEach(System.out::println);
+
+
 
 
 

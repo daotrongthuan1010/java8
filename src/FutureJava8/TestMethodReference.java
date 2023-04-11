@@ -16,6 +16,8 @@ public class TestMethodReference {
 
     Function<Student, Integer> function =  x -> x.getAge();
 
+
+
     AddList.Student().stream().sorted(Comparator.comparing(Student::getAge)).forEach(x -> System.out.println(x));
 
 
