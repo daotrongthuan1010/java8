@@ -29,7 +29,13 @@ public class Student {
   public Student() {
   }
 
+  public String getName() {
+    return name;
+  }
 
+  public void setPoint(Double point) {
+    this.point = point;
+  }
 
   public void setName(String name) {
     this.name = name;
@@ -87,4 +93,6 @@ public class Student {
         ", lopHoc='" + lopHoc + '\'' +
         ']');
   }
+
+
 }
