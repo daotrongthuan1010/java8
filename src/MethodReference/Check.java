@@ -1,2 +1,8 @@
-package MethodReference;public class Check {
+package MethodReference;
+
+
+@FunctionalInterface
+public interface Check {
+
+    void Check(String a);
 }
