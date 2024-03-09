@@ -1,38 +1,34 @@
 package Files;
 
+
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.WatchKey;
-import java.nio.file.WatchService;
-import java.util.concurrent.TimeUnit;
+import java.nio.file.*;
+import java.util.List;
 
 public class FileTest {
 
     public static void main(String[] args) {
 
-        WatchService watchService = new WatchService() {
-            @Override
-            public void close() throws IOException {
+        long start = System.nanoTime();
 
+        try {
+            Path filePath = Path.of("D://test.txt");
+            List<String> lines;
+
+            // Sử dụng try-with-resources để đảm bảo tài nguyên được tự động đóng
+            try (var reader = Files.newBufferedReader(filePath)) {
+                lines = Files.readAllLines(filePath);
             }
 
-            @Override
-            public WatchKey poll() {
-                return null;
+            // In ra từng dòng trong file
+            for (String line : lines) {
+                System.out.println(line);
             }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-            @Override
-            public WatchKey poll(long timeout, TimeUnit unit) throws InterruptedException {
-                return null;
-            }
-
-            @Override
-            public WatchKey take() throws InterruptedException {
-                return null;
-            }
-        };
-
-        Paths.get("D://document.txt");
+        long end = System.nanoTime();
+        System.out.println("Time to read file: " + (end - start) + " nanoseconds");
     }
 }
