@@ -2,7 +2,10 @@ package Test;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -27,6 +30,9 @@ public class Main {
         productsList.add(new Product(16, "Lò vi sóng", 1200000f, "Electronic", LocalDateTime.parse("2021-01-22T05:22:09.136752600")));
 
         productsList.stream().forEach(System.out::println);
+
+        productsList.stream().collect(Collectors.groupingBy(Product::getCategory, Collectors.maxBy(
+                Comparator.comparing(Product::getPrice)))).forEach((a, b) -> System.out.println(a + "\n" + b));
 
 
 
