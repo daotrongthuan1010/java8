@@ -15,12 +15,10 @@ public class FileTest {
             Path filePath = Path.of("D://test.txt");
             List<String> lines;
 
-            // Sử dụng try-with-resources để đảm bảo tài nguyên được tự động đóng
             try (var reader = Files.newBufferedReader(filePath)) {
                 lines = Files.readAllLines(filePath);
             }
 
-            // In ra từng dòng trong file
             for (String line : lines) {
                 System.out.println(line);
             }

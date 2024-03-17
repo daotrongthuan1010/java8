@@ -10,10 +10,8 @@ public class WatchServiceTest
             // Tạo đối tượng WatchService
             WatchService watchService = FileSystems.getDefault().newWatchService();
 
-            // Đường dẫn đến thư mục cần theo dõi
             String directoryPath = "D://";
 
-            // Đăng ký thư mục với WatchService để theo dõi sự thay đổi
             Path directory = Paths.get(directoryPath);
             directory.register(watchService, StandardWatchEventKinds.ENTRY_CREATE,
                     StandardWatchEventKinds.ENTRY_MODIFY, StandardWatchEventKinds.ENTRY_DELETE);
