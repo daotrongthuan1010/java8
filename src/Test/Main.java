@@ -1,10 +1,8 @@
 package Test;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -34,13 +32,24 @@ public class Main {
         productsList.stream().collect(Collectors.groupingBy(Product::getCategory, Collectors.maxBy(
                 Comparator.comparing(Product::getPrice)))).forEach((a, b) -> System.out.println(a + "\n" + b));
 
+        productsList.stream().collect(
+                Collectors.groupingBy(Product::getCategory, Collectors.maxBy(Comparator.comparing(Product::getPrice)))).entrySet().forEach(System.out::println);
 
+        LocalDate localDate = LocalDate.from(LocalDateTime.parse("2023-08-12T10:11:20.136752600"));
 
+        System.out.println(productsList.stream().filter(
+                x ->x.getTimeBuy().isEqual(LocalDateTime.parse("2023-08-12T10:11:20.136752600")))
+                .collect(Collectors.summingDouble(Product::getPrice)));
 
+        productsList.stream().collect(Collectors.groupingBy(Product::getCategory,
+                Collectors.maxBy(Comparator.comparing(Product::getPrice, (a,b) -> {
+                    double max = 0.0;
+                    if(b>max){
+                        max = b;
+                    }
+                    return (int) max;
 
-
-
-
+                })))).forEach((a,b)-> System.out.println("Result : "+b));
 
 
 
